@@ -1,2 +1,6 @@
 @react.component
-let name = () => <div> {React.string("Hello world!")} </div>
+let make = () => {
+  <div className="main-container">
+    <h1> {`Hello world! ReScript + Vite :)`->React.string} </h1>
+  </div>
+}
