@@ -54,3 +54,49 @@ let fn = (~person: person, ~isSpecial=false, ()) => {
   | Admin({name}) => `Hello, ${name}`
   }
 }
+
+// Modulos em modulos ->
+// module Algo = NomeArquivoRes -> Cria um alias para um modulo
+
+// define um modulo dentro de um modulo
+module type SumType = {
+  let sum: (int, int) => int
+}
+
+module Sum: SumType = {
+  let sum = (a, b) => a + b
+}
+open Sum // abre um modulo
+
+//include Sum -> Expor tudo de outro modulo como incluso no modulo atual
+
+sum(5, 2)->Js.log
+
+// Module functors
+
+module CreateSum = () => {
+  let sum = (a, b) => a + b
+}
+
+module SumResult = CreateSum()
+
+let result = SumResult.sum(1, 2)
+
+// Example
+
+module type ConcatInterface = {
+  type t
+  let concat: (t, t) => t
+}
+
+module CreateConcat = (M: ConcatInterface) => {
+  type t = M.t
+  let concat = M.concat
+}
+
+module ConcatString = CreateConcat({
+  type t = string
+  let concat = (a, b) => `${a} ${b}`
+})
+
+ConcatString.concat("Oi ", "Diogo")->Js.log
