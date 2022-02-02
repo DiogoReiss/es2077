@@ -15,7 +15,9 @@
     "rescript:build": "rescript",
     "rescript:start": "rescript build -w",
     "rescript:clean": "rescript clean",
-    "dev": "vite"
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
   },
   "devDependencies": {
     "@vitejs/plugin-react-refresh": "^1.3.6",
