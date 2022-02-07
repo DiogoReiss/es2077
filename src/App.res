@@ -6,13 +6,12 @@
 //  | Dec => state - 1
 //  }
 //}
-
 @react.component
 let make = () => {
   //let (state, dispatch) = React.useReducer(reducer, 0) useReducer
   let message = ref("nothing")
 
-  // useEffect
+  // useEffect -> useCallback use the same structure like useEffect
   //React.useEffect1(() => {
   //  Some(() => Js.log(message.contents))
   //}, [message])
@@ -33,5 +32,6 @@ let make = () => {
     //<button onClick={_ => dispatch(Dec)}> {`Dec`->React.string} </button>
     //<button onClick={_ => dispatch(Inc)}> {`Inc`->React.string} </button>
     // useEffect
+    <StyledComponent />
   </div>
 }

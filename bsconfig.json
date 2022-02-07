@@ -17,6 +17,8 @@
     "react-jsx": 3
   },
   "bs-dependencies": [
-    "@rescript/react"
+    "@rescript/react",
+    "bs-css",
+    "bs-css-emotion"
   ]
 }
