@@ -19,6 +19,7 @@ let make = () => {
 
   <div>
     <h1> {message.contents->React.string} </h1>
+    <p> {Bindings.fn(2, 10)->Js.Int.toString->React.string} </p>
     //useState
 
     //let (count, setCount) = React.useState(() => 0)
