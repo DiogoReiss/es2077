@@ -1,38 +1,27 @@
-// useReducer
-//type action = Inc | Dec
-//let reducer = (state, action) => {
-//  switch action {
-//  | Inc => state + 1
-//  | Dec => state - 1
-//  }
-//}
+open Ancestor.Default
+
+Emotion.injectGlobal({
+  "html": {
+    "fontSize": "10px",
+  },
+  "html, body, root": {
+    "width": "100%",
+    "height": "100px",
+    "margin": "0",
+    "padding": "0",
+  },
+  "#root": {
+    "backgroundColor": Theme.Colors.black->Theme.Colors.toString,
+  },
+  "*": {
+    "boxSixing": "border-box",
+    "fontFamily": Theme.Constants.fontFamily,
+  },
+})
+
 @react.component
 let make = () => {
-  //let (state, dispatch) = React.useReducer(reducer, 0) useReducer
-  let message = ref("nothing")
-
-  // useEffect -> useCallback use the same structure like useEffect
-  //React.useEffect1(() => {
-  //  Some(() => Js.log(message.contents))
-  //}, [message])
-  message.contents = "React Hooks with ReScript"
-
-  <div>
-    <h1> {message.contents->React.string} </h1>
-    <p> {Bindings.fn(2, 10)->Js.Int.toString->React.string} </p>
-    //useState
-
-    //let (count, setCount) = React.useState(() => 0)
-
-    //let handleClick = _ => setCount(i => i + 1)
-
-    //<button onClick={handleClick}> {`Clicked ${count->Js.Int.toString}`->React.string} </button>
-    // useReducer
-
-    //<span> {`Clicked ${state->Js.Int.toString}`->React.string} </span>
-    //<button onClick={_ => dispatch(Dec)}> {`Dec`->React.string} </button>
-    //<button onClick={_ => dispatch(Inc)}> {`Inc`->React.string} </button>
-    // useEffect
-    <StyledComponent />
-  </div>
+  <Box width=[xs(#pct(100.0))] height=[xs(#pct(100.0))] bgColor=[xs(Theme.Colors.black)]>
+    <div />
+  </Box>
 }
