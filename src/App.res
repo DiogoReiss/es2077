@@ -22,6 +22,6 @@ Emotion.injectGlobal({
 @react.component
 let make = () => {
   <Box width=[xs(#pct(100.0))] height=[xs(#pct(100.0))] bgColor=[xs(Theme.Colors.black)]>
-    <div />
+    <Button> "Adicionar" </Button>
   </Box>
 }
